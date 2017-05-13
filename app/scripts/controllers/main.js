@@ -15,9 +15,11 @@ angular.module('wprestNgApp')
   //     'Karma'
   //   ];
   // });
-  .controller('MainCtrl', function( $scope, $http, $routeParams){
+  .controller('MainCtrl', function( $scope, $http, $routeParams, $controller){
         $http.get( 'http://localhost/_learn/wprest/wp-json/wp/v2/posts/' ).then( function( response ){
             $scope.posts = response.data;
             console.log( response.data );
         });
+
+        angular.extend( this, $controller('PostCtrl', {$scope: $scope}));
     });

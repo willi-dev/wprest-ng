@@ -1,9 +1,28 @@
 <div class="row">
-    <ul>
-        <li ng-repeat="post in posts">
-            <a href="#/post/{{ post.id }}">
-                {{ post.title.rendered }}
-            </a>
-        </li>
-    </ul>
+    <!-- col left -->
+    <div class="col-xs-12 col-md-4">
+            
+        <img src="images/Lamaran_Willi_photo.jpg" class="img-responsive" style="width:100px; float:right;" alt="">
+    </div>
+
+    <!-- col right -->
+    <div class="col-xs-12 col-md-8" >
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID </th>
+                    <th>Title Post</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="post in posts">
+                    <td>{{ post.id }}</td>
+                    <td><a href="#/post/{{ post.id }}">{{ post.title.rendered }}</a></td>
+                </tr>    
+            </tbody>
+            
+        </table>
+    </div>
 </div>
+
+{{ daripost.statusText }}
